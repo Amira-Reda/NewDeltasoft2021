@@ -36,7 +36,7 @@ function enqueue_my_custom_scripts(){
     wp_enqueue_script('anmiated-map.js',get_template_directory_uri().'/assets/js/anmiated-map.js',array(),false,true);
     wp_enqueue_script('scripts.js',get_template_directory_uri().'/assets/js/scripts.js',array(),false,true);
     // contact us
-    wp_enqueue_script('scripts.js',get_template_directory_uri().'../../plugins/contact-form-7/includes/js/scripts.js',array(),false,true);
+    // wp_enqueue_script('scripts.js',get_template_directory_uri().'../../plugins/contact-form-7/includes/js/scripts.js',array(),false,true);
 
 
     // <script src="http://localhost/Deltasoft_wordpress/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.2.2" id="contact-form-7-js"></script>
@@ -48,7 +48,7 @@ add_action('wp_enqueue_scripts','enqueue_my_custom_scripts');
 
 // menu
 function register_my_menu() {
-    register_nav_menu('header-menu',__( 'deltasoft' ));
+    register_nav_menu('header-menu',__( 'main menu' ));
   }
   add_action( 'init', 'register_my_menu' );
 

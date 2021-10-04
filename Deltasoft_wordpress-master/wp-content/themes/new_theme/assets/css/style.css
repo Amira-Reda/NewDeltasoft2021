@@ -853,5 +853,10 @@ footer .copyrights p {
     -ms-transform: translate(0px, 0px);
   }
 }
+.career{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center !important;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,22 @@
+/*
+Theme Name: Deltasoft Theme
+Theme URI: https://amirareda.com/theme
+Author: Amira Reda
+Author URI: https://amirareda.com
+Description: This is my first custom theme!
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: <https://www.gnu.org/licenses/gpl-2.0.html>
+Text Domain: new_theme
+Tags: دلتا سوفت ثيم
+*/
+
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+.career{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}

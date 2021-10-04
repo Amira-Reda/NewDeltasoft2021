@@ -1,4 +1,57 @@
 <?php get_header();?>
+
+<?php
+	if ( have_posts()  && $pagename==_('career') ) :?>
+
+        <section class="home-wrapper w-100 career">
+
+		<?php while ( have_posts()) :
+	
+			the_post();
+			?>
+	
+			<article <?php post_class(); ?>>
+			
+				<header class="entry-header">
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				</header><! – .entry-header – >
+			
+				<div class="entry-content">
+					<?php the_content( esc_html__( 'Continue reading &rarr;', 'my-custom-theme' ) ); ?>
+				</div><! – .entry-content – >
+			
+			</article><! – #post-## – >
+			
+			<?php
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+        
+		endwhile;
+        ?>
+        </section>
+        <section class="section subscribe pt-5 pb-5 w-100">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 pt-3 pb-3 text-center">
+                    <h4 class="title">اشترك في نشرتنا الإخبارية</h4>
+                    <h5 class="title mb-4">لمعرفة أخبار دلتا سوفت.</h5>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 pt-3 pb-3 text-center">
+                    <form class="form-inline justify-content-center">
+                        <div class="form-group mx-sm-5">
+                            <input type="text" class="form-control" id="inputSubscribe" placeholder="Subscribe">
+                        </div>
+                        <button type="submit" class="btn btn-warning-gradient btn-lg rounded-pill">اشترك
+                                الان</button>
+                    </form>
+                </div>
+                <!--end col-->
+            </div>
+        </div>
+    </section>
+	<?php else :?>
 <?php if( WPGlobus::Config()->language == 'ar'){?>
     <section class="home-wrapper w-100">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -182,13 +235,13 @@
             <div class="row justify-content-center clients-items mt-5">
                 <div class="owl-carousel owl-centered owl-theme">
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri().'/assets/images/clients-logos/tf1-logo.jpg';?>" alt="DeltaSoft Client Logo">
+                        <img src="<?php echo get_template_directory_uri().'/assets/images/clients-logos/tf1-logo.jpg';?>" alt="<?php bloginfo( 'name' ); ?> Client Logo">
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri().'/assets/images/clients-logos/ELogo.png';?>" alt="DeltaSoft Client Logo">
+                        <img src="<?php echo get_template_directory_uri().'/assets/images/clients-logos/ELogo.png';?>" alt="<?php bloginfo( 'name' ); ?> Client Logo">
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri().'/assets/images/clients-logos/education-logo.png';?>" alt="DeltaSoft Client Logo">
+                        <img src="<?php echo get_template_directory_uri().'/assets/images/clients-logos/education-logo.png';?>" alt="<?php bloginfo( 'name' ); ?> Client Logo">
                     </div>
                 </div>
             </div>
@@ -524,13 +577,13 @@
             <div class="row justify-content-center clients-items mt-5">
                 <div class="owl-carousel owl-centered owl-theme">
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri().'/assets/images/clients-logos/tf1-logo.jpg'?>"  alt="DeltaSoft Client Logo">
+                        <img src="<?php echo get_template_directory_uri().'/assets/images/clients-logos/tf1-logo.jpg'?>"  alt="<?php bloginfo( 'name' ); ?> Client Logo">
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri().'/assets/images/clients-logos/ELogo.png'?>"  alt="DeltaSoft Client Logo">
+                        <img src="<?php echo get_template_directory_uri().'/assets/images/clients-logos/ELogo.png'?>"  alt="<?php bloginfo( 'name' ); ?> Client Logo">
                     </div>
                     <div class="item">
-                        <img src="<?php echo get_template_directory_uri().'/assets/images/clients-logos/education-logo.png'?>" alt="DeltaSoft Client Logo">
+                        <img src="<?php echo get_template_directory_uri().'/assets/images/clients-logos/education-logo.png'?>" alt="<?php bloginfo( 'name' ); ?> Client Logo">
                     </div>
                 </div>
             </div>
@@ -699,5 +752,6 @@
             </div>
         </div>
     </section>
-                    <?php }?>
+                    <?php }
+                    endif;?>
 <?php get_footer(); ?>

@@ -1,38 +1,42 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying single posts and pages.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package WordPress
- * @subpackage Twenty_Nineteen
- * @since Twenty Nineteen 1.0
+ * @copyright  Copyright (c) 2020, Danny Cooper
+ * @license    http://opensource.org/licenses/gpl-2.0.php GNU Public License
  */
 
-get_header();
-?>
+get_header(); ?>
+  <div class="site-content">
+    <?php
+    while ( have_posts() ) :
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+    the_post();
+    ?>
 
-			<?php
+    <article <?php post_class(); ?>>
 
-			// Start the Loop.
-			while ( have_posts() ) :
-				the_post();
+	  <?php the_post_thumbnail( 'my-custom-image-size' ); ?>
 
-				get_template_part( 'template-parts/content/content', 'page' );
+      <header class="entry-header">
+        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+      </header><!-- .entry-header -->
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
+      <div class="entry-content">
+        <?php the_content(); ?>
+      </div><!-- .entry-content -->
 
-			endwhile; // End the loop.
-			?>
+    </article><!-- #post-## -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+    <?php
+    // If comments are open or we have at least one comment, load up the comment template.
+    if ( comments_open() || get_comments_number() ) :
+      comments_template();
+    endif;
 
+  endwhile;
+	?>
+	</div><!-- .site-content -->
 <?php
+get_sidebar();
 get_footer();

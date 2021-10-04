@@ -14,17 +14,17 @@
 
 </head>
 
-<body>
+<body  class="site-content">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark header-sticky">
             <div class="container-fluid p-0">
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                 <?php if( WPGlobus::Config()->language == 'ar'){?>
-                    <img src="<?php echo get_template_directory_uri().'/assets/images/svg/AR-Logo.svg'?>" alt="DeltaSoft" />
+                    <img src="<?php echo get_template_directory_uri().'/assets/images/svg/AR-Logo.svg'?>" alt="<?php bloginfo( 'name' ); ?>" />
 
                     <?php }else{ ?>
                     
-                    <img src="<?php echo get_template_directory_uri().'/assets/images/svg/EN-Logo.svg'?>" alt="DeltaSoft" />
+                    <img src="<?php echo get_template_directory_uri().'/assets/images/svg/EN-Logo.svg'?>" alt="<?php bloginfo( 'name' ); ?>" />
                 <?php }?>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
