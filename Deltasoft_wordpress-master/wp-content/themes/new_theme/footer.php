@@ -88,22 +88,22 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <ul class="list-unstyled list-inline">
                                 <li>
-                                    <a href="/">الرئيسية</a>
+                                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">الرئيسية</a>
                                 </li>
                                 <li>
-                                    <a href="#products">المنتجات</a>
+                                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>#products">المنتجات</a>
                                 </li>
                                 <li>
-                                    <a href="#services">الخدمات</a>
+                                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>#services">الخدمات</a>
                                 </li>
                                 <li>
-                                    <a href="#">الوظائف</a>
+                                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>career">الوظائف</a>
                                 </li>
                                 <li>
-                                    <a href="#about">تعرف علينا</a>
+                                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>about">تعرف علينا</a>
                                 </li>
                                 <li>
-                                    <a href="#contact">تواصل معنا</a>
+                                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>#contact">تواصل معنا</a>
                                 </li>
                             </ul>
                         </div>

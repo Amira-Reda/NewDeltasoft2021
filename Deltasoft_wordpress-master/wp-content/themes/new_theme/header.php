@@ -44,7 +44,7 @@
                     <?php }?>
                     </ul>
                     <form class="form-inline my-2 my-lg-0" >
-                        <a class="btn btn-warning rounded-pill mr-1 my-2 my-sm-0" type="submit" href="#contact">              
+                        <a class="btn btn-warning rounded-pill mr-1 my-2 my-sm-0" type="submit" href="<?php echo esc_url( home_url( '/' ) ); ?>#contact">              
                               <?php if( WPGlobus::Config()->language == 'ar'){?>
                                 اطلب الأن
                               <?php }else{?>

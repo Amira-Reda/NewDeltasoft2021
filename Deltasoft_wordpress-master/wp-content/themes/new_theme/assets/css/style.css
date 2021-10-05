@@ -854,9 +854,17 @@ footer .copyrights p {
   }
 }
 .career{
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 4%;
+  margin-bottom: 4%;
   text-align: center !important;
+}
+
+.career-introduction{
+  word-break: break-word;
+  /* margin-right: 10%;
+  margin-left: 10%; */
+  font-size: 30px;
+
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,15 +2,21 @@
 
 <?php
 	if ( have_posts()  && $pagename==_('career') ) :?>
-
+<div>
+    <p class="career-introduction career">
+    <?php echo _('Your Career Life Grows With Us We appreciate the diverse skills and capabilities of our staff and we look forward to push them to a higher level. We strive to create professional environment which is full of challenges of the, and encourages innovation and creativity, and to reward success and effective teamwork. We’re always looking for talented people who are passionate about innovation and creativity. Do you like to be involved in building many of the products and services of educational and creative? Send your CV to hr@edeltasoft.com Required Jobs:');?>
+    </p>
+</div>
         <section class="home-wrapper w-100 career">
-
+<ul class="bottom-text-box card-grid-container__grid card-grid card-grid--3">
 		<?php while ( have_posts()) :
 	
 			the_post();
 			?>
-	
-			<article <?php post_class(); ?>>
+            <li class="card-grid__item" style="display: inline-block;list-style: none;">
+                <div class="card-item card-item--custom card-item--green card-item--plain paragraph paragraph--type--card-item-custom paragraph--view-mode--default">
+	<!-- <div class="col-md-6" style="border: outset;"> -->
+			<div <?php post_class(); ?> >
 			
 				<header class="entry-header">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -20,16 +26,18 @@
 					<?php the_content( esc_html__( 'Continue reading &rarr;', 'my-custom-theme' ) ); ?>
 				</div><! – .entry-content – >
 			
-			</article><! – #post-## – >
-			
+        </div><! – #post-## – >
+        </div>
+            </li>
 			<?php
 			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			// if ( comments_open() || get_comments_number() ) :
+			// 	comments_template();
+			// endif;
         
 		endwhile;
         ?>
+        </ul>
         </section>
         <section class="section subscribe pt-5 pb-5 w-100">
         <div class="container-fluid">
@@ -41,7 +49,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 pt-3 pb-3 text-center">
                     <form class="form-inline justify-content-center">
                         <div class="form-group mx-sm-5">
-                            <input type="text" class="form-control" id="inputSubscribe" placeholder="Subscribe">
+                            <input type="text" class="form-control" id="inputSubscribe" placeholder="<?php echo _('Subscribe');?>">
                         </div>
                         <button type="submit" class="btn btn-warning-gradient btn-lg rounded-pill">اشترك
                                 الان</button>
